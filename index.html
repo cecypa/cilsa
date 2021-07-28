@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cilsa Práctica Final</title>
+</head>
+<body>
+
+
+<div>
+<label id = "ingreso"> Ingrese su nombre </label>
+<input  id = "barra"  type="text" required placeholder="Nombre" name="name"/>
+<p id="values"></p>
+</div>
+
+
+<div id = "radios" >
+
+    <form id= "back" name=colorea> 
+
+       <input  type="Radio" name="color" value="#EA1313"checked> Rojo 
+       <input  type="Radio" name="color" value="#FBF655"> Amarillo 
+       <input type="Radio" name="color" value="#55FBD9"> Aguamarina 
+        <input type="Radio" name="color" value="#90FB55"> Verde 
+        <input type="Radio" name="color" value="#E0C0FF"> Lila
+        
+        
+        <br> 
+        <br> 
+        <input  id= "boton" type="Button" name="" value="Cambiar Color" onclick="cambiarColor()"> 
+        </form> 
+  </div>
+        
+    <div class="wrap">
+        <div class="widget">
+            <div class="fecha">
+                <p id="diaSemana" class="diaSemana">Martes</p>
+                <p id="dia" class="dia">27</p>
+                <p>de </p>
+                <p id="mes" class="mes">Octubre</p>
+                <p>del </p>
+                <p id="year" class="year">2015</p>
+            </div>
+    
+            <div class="reloj">
+                <p id="horas" class="horas">11</p>
+                <p>:</p>
+                <p id="minutos" class="minutos">48</p>
+                <p>:</p>
+                <div class="caja-segundos">
+                    <p id="ampm" class="ampm">AM</p>
+                    <p id="segundos" class="segundos">12</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="txt.js"></script>
+    
+    
+    <script> 
+    const input = document.querySelector('input');
+    const log = document.getElementById('values');
+
+    input.addEventListener('input', nuevoValue);
+
+    function nuevoValue(e) {
+        log.textContent = (`Hola ${e.target.value}!!. Usted puede elegir el color de fondo de la pantalla y saber la hora local.`);
+}
+
+
+    function cambiarColor(){ 
+           var i 
+           for (i=0;i<document.colorea.color.length;i++){ 
+              if (document.colorea.color[i].checked) 
+                 break; 
+           } 
+           document.body.bgColor = document.colorea.color[i].value 
+    } 
+
+      
+    </script> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
